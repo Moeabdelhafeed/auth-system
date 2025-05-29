@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
     "daisyui": "^5.0.40",
+    "gsap": "^3.13.0",
     "nuxt": "^3.17.4",
     "nuxt-auth-sanctum": "^0.6.7",
     "tailwindcss": "^4.1.8",

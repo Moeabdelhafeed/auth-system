@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -17,6 +18,8 @@ class AuthController extends Controller
         ]);
 
         $user = User::create($feilds);
+
+        event(new Registered($user));
 
       return response()->json([
             'user' => $user,

@@ -1,25 +1,21 @@
 <template>
     <div>
         this is the home page 
-        {{ data }}
-
+        
     </div>
 </template>
 
 <script setup>
 definePageMeta({
-    middleware: 'sanctum:auth'
+    middleware: ['sanctum:auth', 'verified']
 })
 
 
-const {isAuthenticated} = useSanctumAuth();
+const {isAuthenticated, user} = useSanctumAuth();
 
 const config = useRuntimeConfig()
 const client = useSanctumClient()
 
-const data =  await client(`${config.public.baseUrl}/api/message`, {
-        method: 'POST'
-    })
 
 
 

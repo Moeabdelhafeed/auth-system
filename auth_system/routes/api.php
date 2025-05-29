@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EmailVerificationController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -13,8 +15,5 @@ Route::post('/register' , [AuthController::class, 'register']);
 Route::post('/login' , [AuthController::class, 'login']);
 Route::post('/logout' , [AuthController::class, 'logout']);
 
-Route::post('/message' , function () {
-    return response()->json([
-        'message' => 'heyy'
-    ]);
-})->middleware('auth:sanctum');
+Route::post('/email/resend', [EmailVerificationController::class, 'resend'])->middleware('auth:sanctum');
+
