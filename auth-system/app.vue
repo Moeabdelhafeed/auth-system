@@ -1,7 +1,7 @@
 <template>
   <Html data-theme="synthwave">
       <NuxtLayout>
-        <NuxtPage />
+        <NuxtPage  />
       </NuxtLayout>
   </Html>
 </template>

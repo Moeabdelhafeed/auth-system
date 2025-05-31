@@ -5,7 +5,7 @@
             <input type="name" autocomplete="name" v-model="formData.name" placeholder="name" class="input input-primary w-full mb-4" />
             <input type="email" autocomplete="email" v-model="formData.email" placeholder="email" class="input input-primary w-full mb-4" />
             <input type="password" autocomplete="new-password" v-model="formData.password" placeholder="password" class="input input-primary w-full mb-4" />
-            <input type="password confirmation" autocomplete="new-password" v-model="formData.password_confirmation" placeholder="password" class="input input-primary w-full mb-4" />
+            <input type="password" autocomplete="new-password" v-model="formData.password_confirmation" placeholder="password confirmation" class="input input-primary w-full mb-4" />
             <button class="btn btn-primary w-full">Register </button>
         </form>
 

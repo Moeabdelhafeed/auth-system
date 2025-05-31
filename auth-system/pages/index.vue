@@ -1,5 +1,6 @@
 <template>
     <div>
+
         this is the home page 
         
     </div>
@@ -11,10 +12,6 @@ definePageMeta({
 })
 
 
-const {isAuthenticated, user} = useSanctumAuth();
-
-const config = useRuntimeConfig()
-const client = useSanctumClient()
 
 
 

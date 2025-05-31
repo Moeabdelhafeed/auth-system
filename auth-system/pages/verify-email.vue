@@ -14,10 +14,14 @@ definePageMeta({
     middleware: ['sanctum:auth', 'un-verified']
 })
 
+const config = useRuntimeConfig();
+const client = useSanctumClient();
 
 
-const handleResend = () =>{
-
+const handleResend = async () =>{
+    const data = client(`${config.public.baseUrl}/api/email/resend`, {
+        method: 'POST'
+    })  
 }
 
 </script>
