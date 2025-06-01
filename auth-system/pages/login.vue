@@ -5,6 +5,7 @@
             <input v-model="formData.email" autocomplete="email" type="email" placeholder="email" class="input input-primary w-full mb-4" />
             <input v-model="formData.password" autocomplete="current-password"  type="password" placeholder="password" class="input input-primary w-full mb-4" />
             <button class="btn btn-primary w-full">Login </button>
+            <p class="text-center mt-5"> forgot password? <NuxtLink to="/forgot-password"  class="underline hover:text-blue-900 cursor-pointer"> reset password </NuxtLink></p>
         </form>
 
     </div>

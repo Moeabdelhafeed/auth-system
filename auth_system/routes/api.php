@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EmailVerificationController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -17,3 +18,9 @@ Route::post('/logout' , [AuthController::class, 'logout']);
 
 Route::post('/email/resend', [EmailVerificationController::class, 'resend'])->middleware('auth:sanctum');
 
+
+
+Route::post('/password/email', [PasswordResetController::class, 'sendResetLinkEmail']);
+Route::post('/password/reset', [PasswordResetController::class, 'reset']);
+
+Route::post('/password/validate', [PasswordResetController::class, 'validateToken']);

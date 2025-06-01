@@ -19,7 +19,7 @@ const client = useSanctumClient();
 
 
 const handleResend = async () =>{
-    const data = client(`${config.public.baseUrl}/api/email/resend`, {
+    const data = await client(`${config.public.baseUrl}/api/email/resend`, {
         method: 'POST'
     })  
 }

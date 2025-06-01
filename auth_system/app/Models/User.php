@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use App\Notifications\CustomVerifyEmail;
+use App\Notifications\ResetPasswordNotification;
 use App\Notifications\VerifyEmail;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
@@ -53,5 +54,12 @@ public function sendEmailVerificationNotification()
 {
     $this->notify(new VerifyEmail);
 }
+
+public function sendPasswordResetNotification($token)
+{
+    $this->notify(new ResetPasswordNotification($token));
+}
+
+
 
 }

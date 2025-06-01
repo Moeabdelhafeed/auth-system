@@ -34,10 +34,13 @@ definePageMeta({
 })
 
 const handleRegister = async () => {
+    
     await client(`${config.public.baseUrl}/api/register`, {
         method: 'POST',
         body: JSON.stringify(formData.value)
     })
+
+
 
     await login(formData.value)
 }
