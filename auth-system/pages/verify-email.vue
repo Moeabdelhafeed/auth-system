@@ -17,11 +17,22 @@ definePageMeta({
 const config = useRuntimeConfig();
 const client = useSanctumClient();
 
+useHead({
+    title: 'verify email'
+})
+
+
 
 const handleResend = async () =>{
     const data = await client(`${config.public.baseUrl}/api/email/resend`, {
         method: 'POST'
     })  
+
+    success.value = true
+
+    setTimeout(() => {
+        success.value = false
+    }, 4000)
 }
 
 </script>

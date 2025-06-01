@@ -12,7 +12,9 @@ definePageMeta({
 })
 
 
-
+useHead({
+    title: 'home'
+})
 
 
 

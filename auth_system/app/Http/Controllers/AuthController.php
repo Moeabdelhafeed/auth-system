@@ -29,12 +29,14 @@ class AuthController extends Controller
 
     public function login(Request $request){
         $feilds = $request->validate([
-            'email' => 'required|email',
+            'email' => 'required|email|exists:users,email',
             'password' => 'required|min:8|'
         ]);
 
         if (!Auth::attempt($feilds)) {
-            return response()->json(['message' => 'Invalid credentials'], 401);
+            return response()->json(['errors' => [
+                'user' => ['invalid credentials']
+            ]], 401);
         }
 
         $request->session()->regenerate();
