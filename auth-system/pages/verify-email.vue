@@ -4,6 +4,7 @@
         
         <a href="https://gmail.com/" class="btn btn-primary mt-5">Open Gmail</a>
         <p class="mt-5">didnt recive the email? <span @click="handleResend" class=" underline hover:text-blue-900 cursor-pointer">resend</span></p>
+        <p v-if="success" class="mt-2 text-sm text-green-300">Your Verification Email is Sent</p>
     </div>
 </template>
 
@@ -20,6 +21,8 @@ const client = useSanctumClient();
 useHead({
     title: 'verify email'
 })
+
+const success = ref(false)
 
 
 
